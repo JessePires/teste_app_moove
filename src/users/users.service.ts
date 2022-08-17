@@ -7,11 +7,11 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(data: CreateUserDto) {
-    return this.prisma.user.create({ data });
+  async create(data: CreateUserDto) {
+    return await this.prisma.user.create({ data });
   }
 
-  findAll(page: number, name: string, email: string) {
+  async findAll(page: number, name: string, email: string) {
     // Mounting the Where clause for filtering name and/or email
     let whereClause = {};
 
@@ -24,22 +24,38 @@ export class UsersService {
       whereClause = { email: { contains: email } };
     }
 
-    return this.prisma.user.findMany({
+    return await this.prisma.user.findMany({
       take: 2,
       skip: 2 * (page - 1),
       where: whereClause,
     });
   }
 
-  findOne(id: string) {
-    return this.prisma.user.findUnique({ where: { id } });
+  async findOne(id: string) {
+    const user = await this.prisma.user.findUnique({ where: { id } });
+
+    if (!user) throw Error('User not found!');
+
+    return user;
   }
 
-  update(id: string, data: UpdateUserDto) {
-    return this.prisma.user.update({ where: { id }, data });
+  async update(id: string, data: UpdateUserDto) {
+    const userToBeUpdated = await this.prisma.user.findUnique({
+      where: { id },
+    });
+
+    if (!userToBeUpdated) throw Error('User not found!');
+
+    return await this.prisma.user.update({ where: { id }, data });
   }
 
-  remove(id: string) {
-    return this.prisma.user.delete({ where: { id } });
+  async remove(id: string) {
+    const userToBeRemoved = await this.prisma.user.findUnique({
+      where: { id },
+    });
+
+    if (!userToBeRemoved) throw Error('User not found!');
+
+    return await this.prisma.user.delete({ where: { id } });
   }
 }
