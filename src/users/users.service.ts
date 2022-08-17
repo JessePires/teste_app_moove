@@ -8,12 +8,27 @@ export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(data: CreateUserDto) {
-    console.log('DATA', data);
     return this.prisma.user.create({ data });
   }
 
-  findAll() {
-    return this.prisma.user.findMany();
+  findAll(page: number, name: string, email: string) {
+    // Mounting the Where clause for filtering name and/or email
+    let whereClause = {};
+
+    if (name !== null && email !== null) {
+      whereClause = { name: { contains: name }, email: { contains: email } };
+    }
+    if (name !== null && email === null) {
+      whereClause = { name: { contains: name } };
+    } else if (name === null && email !== null) {
+      whereClause = { email: { contains: email } };
+    }
+
+    return this.prisma.user.findMany({
+      take: 2,
+      skip: 2 * (page - 1),
+      where: whereClause,
+    });
   }
 
   findOne(id: string) {

@@ -5,6 +5,7 @@ import {
   Body,
   Patch,
   Param,
+  Query,
   Delete,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
@@ -20,9 +21,13 @@ export class UsersController {
     return this.usersService.create(createUserDto);
   }
 
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
+  @Get('')
+  findAll(
+    @Query('page') page: number,
+    @Query('name') name: string,
+    @Query('email') email: string,
+  ) {
+    return this.usersService.findAll(page, name, email);
   }
 
   @Get(':id')
