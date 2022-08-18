@@ -10,10 +10,6 @@
   </a>
 </p>
 
-<h4 align="center">
-	🚧  Terminado 🚧
-</h4>
-
 Tabela de conteúdos
 =================
 <!--ts-->
