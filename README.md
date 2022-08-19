@@ -104,6 +104,12 @@ $ yarn test:e2e
 $ yarn test:cov
 ```
 
+### Executando o arquivo que popula o banco
+```bash
+# Antes de tudo, garanta que o arquivo de onde os dados serão importados está na pasta public. Depois, basta executar
+ts-node script.ts
+```
+
 ---
 
 ## 🛠 Tecnologias
