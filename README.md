@@ -123,6 +123,7 @@ Algumas das melhorias que podem ser realizadas são:
 - Paralelizar a inserção dos usuários com base no arquivo para melhorar a performance.
 - Implementar testes.
 - Limitar o range de opções de formato de arquivos para inserção dos usuários.
+- Olhar com mais calma o tratamento dos dados.
 
 ---
 
