@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0.30
+    restart: always
+    ports:
+      - '3308:3306'
+    volumes:
+      - ./mysql_teste_app_moove:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=db_teste_app_moove_root_password
+      - MYSQL_DATABASE=users_db
