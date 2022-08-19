@@ -48,7 +48,17 @@ $ npm install
 $ yarn
 ```
 
-## Running the app
+### Subindo banco de dados com docker
+
+```bash
+# para subir o container basta executar o comando
+$ docker-compose -f docker-compose-db.yml up  
+
+# em outra aba do terminal, execute
+$ npx prisma migrate dev --name init
+```
+
+### Rodando a Aplicação
 
 ```bash
 # development
@@ -71,7 +81,7 @@ $ yarn start:dev
 $ yarn start:prod
 ```
 
-## Test
+### Testando
 
 ```bash
 # unit tests
