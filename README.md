@@ -1,41 +1,58 @@
+<h1 align="center">
+  Teste Backend da AppMoove.
+</h1>
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/JessePires/teste_app_moove?color=%2304D361">
+  
+  <a href="https://github.com/JessePires/teste_app_moove/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/JessePires/teste_app_moove">
+  </a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Tabela de conteúdos
+=================
+<!--ts-->
+   * [Sobre o projeto](#-sobre-o-projeto)
+   * [Como executar o projeto](#-como-executar-o-projeto)
+     * [Pré-requisitos](#pré-requisitos)
+     * [Executando](#-executando)
+   * [Tecnologias](#-tecnologias)
+   * [Melhorias](#melhorias)
+   * [Como contribuir com o projeto](#-como-contribuir-com-o-projeto)
+   * [Autor](#-autor)
+<!--te-->
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 💻 Sobre o projeto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este projeto basicamente é um controle de usuários, fornecendo as funcionalidades de criação, busca, atualização e remoção (o famoso CRUD). Além disso, é possível adicionar vários usuários de uma vez fornecendo um arquivo com os dados.
 
-## Installation
+---
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+
+#### 🎲 Executando
 
 ```bash
+# via npm
 $ npm install
+
+#via yarn
+$ yarn
 ```
 
 ## Running the app
 
 ```bash
 # development
+# via npm
 $ npm run start
 
 # watch mode
@@ -43,12 +60,22 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# via yarn
+$ yarn start
+
+# watch mode
+$ yarn start:dev
+
+# production mode
+$ yarn start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
+# via npm
 $ npm run test
 
 # e2e tests
@@ -56,18 +83,58 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+
+# via yarn
+$ yarn test
+
+# e2e tests
+$ yarn test:e2e
+
+# test coverage
+$ yarn test:cov
 ```
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 🛠 Tecnologias
 
-## Stay in touch
+As seguintes ferramentas foram usadas na construção do projeto:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+-   **[NestJs](https://nestjs.com/)**
+-   **[Prisma](https://www.prisma.io/)**
 
-## License
+> Veja o arquivo  [package.json](https://github.com/JessePires/teste_app_moove/blob/master/package.json) para mais detalhes.
+---
 
-Nest is [MIT licensed](LICENSE).
+## Melhorias
+
+Algumas das melhorias que podem ser realizadas são:
+
+- Paralelizar a inserção dos usuários com base no arquivo para melhorar a performance.
+- Implementar testes.
+- Limitar o range de opções de formato de arquivos para inserção dos usuários.
+
+---
+
+## 💪 Como contribuir com o projeto
+
+1. Faça um **fork** do projeto.
+2. Crie uma nova branch com as suas alterações: `git checkout -b my-feature`
+3. Salve as alterações e crie uma mensagem de commit contando o que você fez: `git commit -m "feature: My new feature"`
+4. Envie as suas alterações: `git push origin my-feature`
+
+---
+
+## 🦸 Autor
+
+<table><tr>
+
+<td align="center"><a href="https://github.com/JessePires">
+ <img style="border-radius: 50%;" src="https://avatars0.githubusercontent.com/u/20424496?s=460&u=87f2870ff153ab88402d6246cb3347a46ae33fe9&v=4" width="100px;" alt=""/>
+<br />
+ <b>Jessé Pires</b>
+ </a> <a href="https://github.com/JessePires" title="Repositorio Jessé"></a>
+
+[![Gmail Badge](https://img.shields.io/badge/-jessepires2010@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jessepires2010@gmail.com)](mailto:jessepires2010@gmail.com)</td>
+
+</tr></table>
